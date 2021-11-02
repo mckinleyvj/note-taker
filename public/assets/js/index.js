@@ -46,8 +46,7 @@ const saveNote = (note) => {
 
 const renderActiveNote = () => {
   $saveNoteBtn.hide();
-  console.log(typeof activeNote);
-  if (typeof activeNote === "object") {
+  if (typeof activeNote.note_id === "string") {
     $noteTitle.attr('readonly', true);
     $noteText.attr('readonly', true);
     $noteTitle.val(activeNote.title);
@@ -74,7 +73,6 @@ const handleNoteSave = () => {
 // Sets the activeNote and displays it
 const handleNoteView = (e) => {
   activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
-  //.attr('data-note')
   renderActiveNote();
 };
 
