@@ -1,5 +1,5 @@
 const notes = require('express').Router();
-const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
+const { readFromFile, readAndAppend, writeToFile } = require('../helpers/fsUtils');
 const uuid = require('../helpers/uuid');
 
 // GET Route to read db.json
@@ -27,12 +27,19 @@ notes.post('/', (req, res) => {
   }
 });
 
-// notes.get("/api/notes/:id", function(req,res) {
-//   res.json(notes[req.params.id]);
-// });
-
-// notes.delete("/api/notes/:id", function(req, res) {
-//   notes.splice(req.params.id, 1);
-// });
+notes.delete('/:note_id', (req, res) => {
+  const noteId = req.params.note_id;
+  //console.log(noteId);
+  readFromFile('./db/db.json')
+    .then((data) => JSON.parse(data))
+    .then((json) => {
+      const result = json.filter((theNote) => theNote.note_id !== noteId)
+      //Save that array to the filesystem
+      writeToFile('./db/db.json', result);
+      
+      // Respond to the DELETE request
+      //res.json(`Item ${tipId} has been deleted 🗑️`);
+    });
+});
 
 module.exports = notes;
