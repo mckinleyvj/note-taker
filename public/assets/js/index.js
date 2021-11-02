@@ -13,6 +13,11 @@ const getNotes = () => {
       'Content-Type': 'application/json',
     },
   })
+  .then((res) => res.json())
+    .then((data) => {})
+    .catch((error) => {
+      console.error('Error:', error);
+  });
 };
 
 const saveNote = (note) => {
@@ -30,13 +35,14 @@ const saveNote = (note) => {
   });
 };
   
-// const deleteNote = (id) => 
-//   fetch(`/api/notes/${id}`, {
+// const deleteNote = (id) => { 
+//   return fetch(`/api/notes/${id}`, {
 //     method: 'DELETE',
 //     headers: {
 //       'Content-Type': 'application/json',
 //     },
-//   });
+//   })
+// };
 
 const renderActiveNote = () => {
   $saveNoteBtn.hide();
@@ -88,6 +94,7 @@ const handleRenderSaveBtn = () => {
 
 // Render the list of note titles
 const renderNoteList = (notes) => {
+  console.log(notes);
   $noteList.empty();
 
   var theItemList = [];
