@@ -16,7 +16,7 @@ const getNotes = () => {
 };
 
 const saveNote = (note) => {
-  fetch('/api/notes', {
+  return fetch('/api/notes', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -44,13 +44,13 @@ const renderActiveNote = () => {
   if (activeNote.id) {
     $noteTitle.attr('readonly', true);
     $noteText.attr('readonly', true);
-    $noteTitle.val() = activeNote.title;
-    $noteText.val() = activeNote.text;
+    $noteTitle.val(activeNote.title);
+    $noteText.val(activeNote.text);
   } else {
     $noteTitle.removeAttr('readonly');
     $noteText.removeAttr('readonly');
-    $noteTitle.text = '';
-    $noteText.text = '';
+    $noteTitle.val('');
+    $noteText.val('');
   }
 };
 
