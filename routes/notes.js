@@ -34,12 +34,12 @@ notes.delete('/:note_id', (req, res) => {
     .then((data) => JSON.parse(data))
     .then((json) => {
       const result = json.filter((theNote) => theNote.note_id !== noteId)
-      //Save that array to the filesystem
+      // //Save that array to the filesystem
       writeToFile('./db/db.json', result);
       
       // Respond to the DELETE request
       //res.json(`Item ${tipId} has been deleted 🗑️`);
-    });
+   });
 });
 
 module.exports = notes;
