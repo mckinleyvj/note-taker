@@ -4,7 +4,7 @@ const $saveNoteBtn = $('.save-note');
 const $newNoteBtn = $('.new-note');
 const $noteList = $('.list-container .list-group');
 
-var activeNote = {};
+let activeNote = {};
 
 const getNotes = () => {
   return fetch('/api/notes', {
@@ -35,18 +35,18 @@ const saveNote = (note) => {
   });
 };
   
-// const deleteNote = (id) => { 
-//   return fetch(`/api/notes/${id}`, {
-//     method: 'DELETE',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//   })
-// };
+const deleteNote = (id) => { 
+  return fetch(`/api/notes/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+};
 
 const renderActiveNote = () => {
   $saveNoteBtn.hide();
-  if (typeof activeNote.note_id === "string") {
+  if ( typeof activeNote.note_id === "string") {
     $noteTitle.attr('readonly', true);
     $noteText.attr('readonly', true);
     $noteTitle.val(activeNote.title);
@@ -57,6 +57,23 @@ const renderActiveNote = () => {
     $noteTitle.val('');
     $noteText.val('');
   }
+};
+
+var handleNoteDelete = (e) => {
+  // prevents the click listener for the list from being called when the button inside of it is clicked
+  e.stopPropagation();
+
+  var note = e.target.parentElement.getAttribute('id');
+  // console.log(note);
+  activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
+  // console.log(activeNote);
+  if (activeNote.note_id === note) {
+    activeNote = {};
+  }
+
+  deleteNote(note);
+  getAndRenderNotes();
+  renderActiveNote();
 };
 
 const handleNoteSave = () => {
@@ -80,6 +97,7 @@ const handleNoteView = (e) => {
 const handleNewNoteView = (e) => {
   activeNote = {};
   renderActiveNote();
+  $noteTitle.focus();
 };
 
 const handleRenderSaveBtn = () => {
@@ -104,7 +122,7 @@ const renderNoteList = (notes) => {
       const $liEl = $("<li>")
       .addClass('list-group-item')
       .attr('data-note', str_note)
-      .attr('id',i);
+      .attr('id',note.note_id);
         
       const $spanEl = $('<span>')
       .addClass('list-item-title')
@@ -112,16 +130,10 @@ const renderNoteList = (notes) => {
   
       $liEl.append($spanEl);
       
-        const $delBtnEl = $('<i>')
-        .addClass(
-          'fas',
-          'fa-trash-alt',
-          'float-right',
-          'text-danger',
-          'delete-note');
-        // .on('click', handleNoteDelete);
+      const $delBtnEl = $('<i>')
+        .addClass('fas fa-trash-alt float-right text-danger delete-note');
 
-      $liEl.append($spanEl, $delBtnEl);
+      $liEl.append($spanEl,$delBtnEl )
       noteListItems.push($liEl);
    };
    $noteList.append(noteListItems);
@@ -138,6 +150,7 @@ $(window).ready(() => {
   $noteTitle.on('keyup', handleRenderSaveBtn);
   $noteText.on('keyup', handleRenderSaveBtn);
   $noteList.on('click', ".list-group-item", handleNoteView);
+  $noteList.on('click', ".delete-note", handleNoteDelete);
 });
 
 getAndRenderNotes();

@@ -4,13 +4,13 @@ const uuid = require('../helpers/uuid');
 
 // GET Route to read db.json
 notes.get('/', (req, res) => {
-  console.info(`${req.method} request received for notes.`);
+  //console.info(`${req.method} request received for notes.`);
   readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
 notes.post('/', (req, res) => {
-  console.info(`${req.method} request received to add a note.`);
-  console.log(req.body);
+  // console.info(`${req.method} request received to add a note.`);
+  // console.log(req.body);
 
   const { title, text } = req.body;
 
@@ -26,5 +26,13 @@ notes.post('/', (req, res) => {
     res.error('Error in adding note');
   }
 });
+
+// notes.get("/api/notes/:id", function(req,res) {
+//   res.json(notes[req.params.id]);
+// });
+
+// notes.delete("/api/notes/:id", function(req, res) {
+//   notes.splice(req.params.id, 1);
+// });
 
 module.exports = notes;
