@@ -74,6 +74,7 @@ var handleNoteDelete = (e) => {
   deleteNote(note);
   getAndRenderNotes();
   renderActiveNote();
+  location.reload();
 };
 
 const handleNoteSave = () => {
