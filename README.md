@@ -1,4 +1,4 @@
-# ✨Team Profile Generator
+# ✨Note Taker
 
 [![license](https://img.shields.io/static/v1?label=license&message=mit&color=red)](https://choosealicense.com/licenses/mit)
 
