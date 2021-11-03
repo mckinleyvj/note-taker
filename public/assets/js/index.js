@@ -60,13 +60,10 @@ const renderActiveNote = () => {
 };
 
 var handleNoteDelete = (e) => {
-  // prevents the click listener for the list from being called when the button inside of it is clicked
   e.stopPropagation();
 
   var note = e.target.parentElement.getAttribute('id');
-  // console.log(note);
   activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
-  // console.log(activeNote);
   if (activeNote.note_id === note) {
     activeNote = {};
   }
@@ -88,13 +85,11 @@ const handleNoteSave = () => {
   });
 };
 
-// Sets the activeNote and displays it
 const handleNoteView = (e) => {
   activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
   renderActiveNote();
 };
 
-// Sets the activeNote to and empty object and allows the user to enter a new note
 const handleNewNoteView = (e) => {
   activeNote = {};
   renderActiveNote();
@@ -109,12 +104,10 @@ const handleRenderSaveBtn = () => {
   }
 };
 
-// Render the list of note titles
 const renderNoteList = (notes) => {
   $noteList.empty();
 
   const noteListItems = [];
-  // Returns HTML element with or without a delete button
     for (let i = 0; i < notes.length; i++) {
       const note = notes[i];
 
@@ -140,7 +133,6 @@ const renderNoteList = (notes) => {
    $noteList.append(noteListItems);
 };
 
-// Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => {
   return getNotes().then((data) => { renderNoteList(data) });
 };
