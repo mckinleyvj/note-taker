@@ -1,4 +1,4 @@
-# ✨Note Taker with ExpressJS
+# note-taker
 
 [![license](https://img.shields.io/static/v1?label=license&message=mit&color=red)](https://choosealicense.com/licenses/mit)
 
@@ -21,7 +21,7 @@ This simple note-taking webpage is built with <kbd>ExpressJS</kbd>. It allows us
 
 I am always looking for contributors of all skill levels! If you have something in mind to add to the project, try out by [creating an issue](https://github.com/mckinleyvj/note-taker/issues) and let's see where we can go from there.
 
-<p align="left">(<a href="#top">back to top</a>)</p>
+[Back to top](#note-taker)
 
 ## Deployment:
 
@@ -31,7 +31,7 @@ I am always looking for contributors of all skill levels! If you have something 
 
 ![Heroku Deployed Note Taker 2](./public/assets/images/note-taker2.png)
 
-<p align="left">(<a href="#top">back to top</a>)</p>
+[Back to top](#note-taker)
 
 ## Installation
 
@@ -57,7 +57,7 @@ node server.js
 
 4. Open browser then set web address to https://localhost:3004 to run the application.
 
-<p align="left">(<a href="#top">back to top</a>)</p>
+[Back to top](#note-taker)
 
 ## Usage
 
@@ -65,7 +65,7 @@ node server.js
 -   This project does not collect any bank details or personal information for misuse.
 -   This project is open source and is available to all developers that finds interest to enhancing features by raising [an issue](https://github.com/mckinleyvj/note-taker/issues) or simply by [contacting me](#questions).
 
-<p align="left">(<a href="#top">back to top</a>)</p>
+[Back to top](#note-taker)
 
 ## Resources
 
@@ -74,7 +74,7 @@ node server.js
 -   Node Packages:
     -   [Express](https://www.npmjs.com/package/express)
 
-<p align="left">(<a href="#top">back to top</a>)</p>
+[Back to top](#note-taker)
 
 ## Author
 
@@ -84,7 +84,7 @@ Mckinley Jimenez
 -   [GitHub](https://github.com/mckinleyvj)
 -   [LinkedIn](https://www.linkedin.com/in/mckinleyjimenez)
 
-<p align="left">(<a href="#top">back to top</a>)</p>
+[Back to top](#note-taker)
 
 ## License
 
@@ -92,7 +92,7 @@ Copyright (c) Microsoft Corporation. All rights reserved.
 
 Licensed under the [mit](LICENSE) license.
 
-<p align="left">(<a href="#top">back to top</a>)</p>
+[Back to top](#note-taker)
 
 ## Questions
 
@@ -100,4 +100,4 @@ Visit my [GitHub profile](https://github.com/mckinleyvj) for more information ab
 
 You can also send me an <a href="mailto:mckinleyvj@gmail.com?">email</a> to know more information.
 
-<p align="left">(<a href="#top">back to top</a>)</p>
+[Back to top](#note-taker)
