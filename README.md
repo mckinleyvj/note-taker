@@ -1,4 +1,4 @@
-# ✨ExpressJS Note Taker
+# ✨Note Taker with ExpressJS
 
 [![license](https://img.shields.io/static/v1?label=license&message=mit&color=red)](https://choosealicense.com/licenses/mit)
 
@@ -22,6 +22,7 @@ This simple note-taking webpage is built with <kbd>ExpressJS</kbd>. It allows us
 I am always looking for contributors of all skill levels! If you have something in mind to add to the project, try out by [creating an issue](https://github.com/mckinleyvj/note-taker/issues) and let's see where we can go from there.
 
 <p align="left">(<a href="#top">back to top</a>)</p>
+
 ## Deployment:
 
 [Note Taker on Heroku](https://macvj-note-taker.herokuapp.com/)
