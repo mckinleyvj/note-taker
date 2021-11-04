@@ -35,27 +35,29 @@ I am always looking for contributors of all skill levels! If you have something 
 
 ## Installation
 
-Lets check if the following packages are installed.
+Fork and clone the repository, then install the required packages to run the application.
 
-1. Clone the repository to your local desktop.
+1. Fork the repository to your Github profile.
+
+2. Clone the repository to your local desktop.
 
 ```bash
 git clone git@github.com:mckinleyvj/note-taker.git
 ```
 
-2. <kbd>node</kbd> package. Use the latest version or a version higher than 14.0.0
+3. Req: <kbd>node</kbd> package. Use the latest version or a version higher than 14.0.0
 
 ```bash
-npm install n -g || npm install v15.0.0 (Specific version)
+npm i || npm install n -g || npm install v15.0.0 (Specific version)
 ```
 
-3. Initiate <kbd>server.js</kbd>
+4. Initiate <kbd>server.js</kbd>
 
 ```bash
 node server.js
 ```
 
-4. Open browser then set web address to https://localhost:3004 to run the application.
+5. Open browser then set web address to https://localhost:3004 to run the application.
 
 [Back to top](#note-taker)
 
